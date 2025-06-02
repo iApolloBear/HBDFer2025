@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Happy Birthday Fer</title>
+    <link href="style.css" rel="stylesheet" />
+    <link
+      href="https://fonts.cdnfonts.com/css/pp-neue-montreal"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="logo"></div>
+    <div class="header">
+      <div class="letters">
+        <div>F</div>
+        <div>E</div>
+      </div>
+      <div class="letters">
+        <div>R</div>
+        <div>N</div>
+      </div>
+    </div>
+  </body>
+  <div class="website-content">
+    <div class="img-holder">
+      <img src="./header.jpg" />
+    </div>
+    <div class="content-holder">
+      <div class="row">
+        <h1>History</h1>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    document.addEventListener("DOMContentLoaded", function () {
+      const contentHolderHeight =
+        document.querySelector(".content-holder").offsetHeight;
+      const imgHolderHeight = window.innerHeight;
+      const additionalScrollHeight = window.innerHeight;
+
+      const totalBodyHeight =
+        contentHolderHeight + imgHolderHeight + additionalScrollHeight;
+      document.body.style.height = `${totalBodyHeight}px`;
+    });
+
+    ScrollTrigger.create({
+      trigger: ".website-content",
+      start: "-0.1% top",
+      end: "bottom bottom",
+      onEnter: () => {
+        gsap.set(".website-content", { position: "absolute", top: "0%" });
+      },
+      onLeaveBack: () => {
+        ".website-content", { position: "fixed", top: "0" };
+      },
+    });
+
+    gsap.to(".header .letters:first-child", {
+      x: () => -innerWidth * 3,
+      scale: 10,
+      ease: "power2.inOut",
+      scrollTrigger: {
+        start: "top top",
+        end: "+=200%",
+        scrub: 1,
+      },
+    });
+
+    gsap.to(".header .letters:last-child", {
+      x: () => innerWidth * 3,
+      scale: 10,
+      ease: "power2.inOut",
+      scrollTrigger: {
+        start: "top top",
+        end: "+=200%",
+        scrub: 1,
+      },
+    });
+
+    gsap.to(".img-holder", {
+      rotation: 0,
+      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+      ease: "power2.inOut",
+      scrollTrigger: {
+        start: "top top",
+        end: "+=200%",
+        scrub: 1,
+      },
+    });
+  </script>
+</html>
