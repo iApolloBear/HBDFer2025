@@ -9,88 +9,195 @@
       href="https://fonts.cdnfonts.com/css/pp-neue-montreal"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="logo"></div>
-    <div class="header">
-      <div class="letters">
-        <div>F</div>
-        <div>E</div>
+    <header>
+      <h1>FER</h1>
+      <div class="container">
+        <div class="cosmos">
+          <div class="cosmos-item">
+            <img src="./1.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./2.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./3.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./4.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./5.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./6.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./7.png" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./8.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./9.png" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./10.jpg" />
+          </div>
+        </div>
+        <div class="cosmos">
+          <div class="cosmos-item">
+            <img src="./1.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./2.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./3.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./4.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./5.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./6.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./7.png" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./8.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./9.png" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./10.jpg" />
+          </div>
+        </div>
+        <div class="cosmos">
+          <div class="cosmos-item">
+            <img src="./1.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./2.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./3.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./4.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./5.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./6.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./7.png" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./8.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./9.png" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./10.jpg" />
+          </div>
+        </div>
+        <div class="cosmos">
+          <div class="cosmos-item">
+            <img src="./1.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./2.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./3.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./4.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./5.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./6.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./7.png" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./8.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./9.png" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./10.jpg" />
+          </div>
+        </div>
+        <div class="cosmos">
+          <div class="cosmos-item">
+            <img src="./1.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./2.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./3.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./4.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./5.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./6.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./7.png" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./8.jpg" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./9.png" />
+          </div>
+          <div class="cosmos-item">
+            <img src="./10.jpg" />
+          </div>
+        </div>
       </div>
-      <div class="letters">
-        <div>R</div>
-        <div>N</div>
-      </div>
-    </div>
+    </header>
+    <script>
+      window.onload = function () {
+        let cosmos = document.querySelectorAll(".cosmos");
+        let total = cosmos.length;
+        let container = document.querySelector(".container");
+        for (let i = 0; i < total; i++) {
+          let angle = (360 / total) * i;
+          let transform = `rotate(${angle}deg) translate(55vh)`;
+          cosmos[i].style.transform = transform;
+          let cosmosItem = cosmos[i].querySelectorAll(".cosmos-item");
+
+          for (let j = 0; j < cosmosItem.length; j++) {
+            cosmosItem[j].style.animationDelay = `${j * 0.5}s`;
+          }
+        }
+      };
+    </script>
   </body>
-  <div class="website-content">
-    <div class="img-holder">
-      <img src="./header.jpg" />
-    </div>
-    <div class="content-holder">
-      <div class="row">
-        <h1>History</h1>
-      </div>
-    </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-  <script>
-    gsap.registerPlugin(ScrollTrigger);
-    document.addEventListener("DOMContentLoaded", function () {
-      const contentHolderHeight =
-        document.querySelector(".content-holder").offsetHeight;
-      const imgHolderHeight = window.innerHeight;
-      const additionalScrollHeight = window.innerHeight;
-
-      const totalBodyHeight =
-        contentHolderHeight + imgHolderHeight + additionalScrollHeight;
-      document.body.style.height = `${totalBodyHeight}px`;
-    });
-
-    ScrollTrigger.create({
-      trigger: ".website-content",
-      start: "-0.1% top",
-      end: "bottom bottom",
-      onEnter: () => {
-        gsap.set(".website-content", { position: "absolute", top: "0%" });
-      },
-      onLeaveBack: () => {
-        ".website-content", { position: "fixed", top: "0" };
-      },
-    });
-
-    gsap.to(".header .letters:first-child", {
-      x: () => -innerWidth * 3,
-      scale: 10,
-      ease: "power2.inOut",
-      scrollTrigger: {
-        start: "top top",
-        end: "+=200%",
-        scrub: 1,
-      },
-    });
-
-    gsap.to(".header .letters:last-child", {
-      x: () => innerWidth * 3,
-      scale: 10,
-      ease: "power2.inOut",
-      scrollTrigger: {
-        start: "top top",
-        end: "+=200%",
-        scrub: 1,
-      },
-    });
-
-    gsap.to(".img-holder", {
-      rotation: 0,
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      ease: "power2.inOut",
-      scrollTrigger: {
-        start: "top top",
-        end: "+=200%",
-        scrub: 1,
-      },
-    });
-  </script>
 </html>
