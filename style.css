@@ -247,7 +247,7 @@ main .img {
 
 @media screen and (max-width: 900px) {
   main {
-    overflow-y: scroll;
+    height: 100dvh;
   }
 
   .modal {

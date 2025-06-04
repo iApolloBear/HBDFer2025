@@ -31,16 +31,16 @@
       <div class="container">
         <div class="cosmos">
           <div class="cosmos-item">
-            <img src="images/1.webp" />
+            <img src="images/1.webp" srcset="images/1.webp" />
           </div>
           <div class="cosmos-item">
-            <img src="images/2.webp" />
+            <img src="images/2.webp" srcset="images/2.webp" />
           </div>
           <div class="cosmos-item">
-            <img src="images/3.webp" />
+            <img src="images/3.webp" srcset="images/3.webp" />
           </div>
           <div class="cosmos-item">
-            <img src="images/4.webp" />
+            <img src="images/4.webp" srcset="images/4.webp" />
           </div>
           <div class="cosmos-item">
             <img src="images/5.webp" />
@@ -454,16 +454,19 @@
         }
       };
 
-      document.addEventListener("mousemove", (e) => {
-        gsap.to(cursor, {
-          x: e.clientX - cursorWidth,
-          y: e.clientY - cursorHeight,
-          duration: 1,
-          ease: "power3.out",
-        });
+      const isMobile = window.innerWidth <= 768;
+      if (!isMobile) {
+        document.addEventListener("mousemove", (e) => {
+          gsap.to(cursor, {
+            x: e.clientX - cursorWidth,
+            y: e.clientY - cursorHeight,
+            duration: 1,
+            ease: "power3.out",
+          });
 
-        updateCursorClass(e.clientX);
-      });
+          updateCursorClass(e.clientX);
+        });
+      }
 
       const updateInfo = (slideNumber) => {
         const slide = slides[slideNumber - 1];
