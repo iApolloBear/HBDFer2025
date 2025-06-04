@@ -215,12 +215,34 @@ main .img {
   text-align: center;
 }
 
-.t-1 {
+.t-1,
+.t-5,
+.t-9,
+.t-13,
+.t-17 {
   background: #fff;
 }
 
-.t-2 {
+.t-2,
+.t-6,
+.t-10,
+.t-14,
+.t-18 {
   background: #c4bca9;
+}
+
+.t-3,
+.t-7,
+.t-11,
+.t-15 {
+  background: #fff;
+}
+
+.t-4,
+.t-8,
+.t-12,
+.t-16 {
+  background: #8e908a;
 }
 
 @media screen and (max-width: 900px) {
