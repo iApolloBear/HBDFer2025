@@ -248,7 +248,7 @@ main .img {
 
 @media screen and (max-width: 900px) {
   main {
-    height: 125dvh;
+    height: 115dvh;
   }
 
   .modal {
