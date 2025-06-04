@@ -213,10 +213,10 @@
         <div class="modal">
           <div class="modal-images">
             <div class="img" id="t-1">
-              <img src="images/1.webp" />
+              <img src="photos/1.jpg" />
             </div>
             <div class="img" id="t-2">
-              <img src="images/2.webp" />
+              <img src="photos/2.jpg" />
             </div>
             <div class="img" id="t-3">
               <img src="images/3.webp" />
@@ -226,8 +226,8 @@
             </div>
           </div>
           <div class="info">
-            <p class="name">Fer</p>
-            <p class="role">Thank you very much</p>
+            <p class="title"></p>
+            <p class="description"></p>
           </div>
         </div>
       </div>
@@ -253,10 +253,16 @@
         }
       };
       const slides = [
-        { name: "Fer", role: "Thank you very much" },
-        { name: "Fer", role: "Thank you very much" },
-        { name: "Fer", role: "Thank you very much" },
-        { name: "Fer", role: "Thank you very much" },
+        {
+          title: "El inicio de una maravillosa historia...",
+          description:
+            "Gracias a ti he conocido el honor que significa ser hermano mayor.",
+        },
+        {
+          title: "No tienes idea de lo mucho que significas en mi vida",
+          description:
+            "Llegaste para poner fin a la soledad que significa ser hijo unico, para ser mi gran compañera de vida.",
+        },
       ];
 
       const cursor = document.querySelector(".cursor");
@@ -302,8 +308,9 @@
 
       const updateInfo = (slideNumber) => {
         const slide = slides[slideNumber - 1];
-        document.querySelector(".info .name").textContent = slide.name;
-        document.querySelector(".info .role").textContent = slide.role;
+        document.querySelector(".info .title").textContent = slide.title;
+        document.querySelector(".info .description").textContent =
+          slide.description;
       };
 
       const animateSlide = (slideNumber, reveal) => {
