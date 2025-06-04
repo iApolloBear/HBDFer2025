@@ -108,6 +108,7 @@ header .container {
 main {
   width: 100%;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   position: relative;
 }
 
@@ -246,10 +247,6 @@ main .img {
 }
 
 @media screen and (max-width: 900px) {
-  main {
-    height: 110dvh;
-  }
-
   .modal {
     width: 300px;
     height: 600px;
